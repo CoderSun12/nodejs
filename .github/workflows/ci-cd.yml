@@ -25,7 +25,7 @@ jobs:
       - name: Run app as test
         run: |
           npm start &
-          sleep 10
+          sleep 6
           echo "App started for 10 seconds, continuing..."
 
   # === CD 部分 ===
@@ -40,9 +40,36 @@ jobs:
       - name: Deploy via SSH
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.SERVER_HOST }}
-          username: ${{ secrets.SERVER_USER }}
-          key: ${{ secrets.SERVER_SSH_KEY }}
+          host: 47.116.121.111
+          username: root
+          key: |
+            -----BEGIN RSA PRIVATE KEY-----
+            MIIEogIBAAKCAQEAwymcAiOoqQX/sBBQJoYpEtoqHw7p3iBk4D0HBhFU7vmb2vfT
+            pMJVdXxCrpshtbxho6e4/+Rg0X17KKrnW8tBWJX4yOgz++SVPlDHsIgFcuvcUUo7
+            SN1gLyemdG7NxoWGRsqbpBXG76cWym2u456nFCT6v5IOzH6gU8QWdNbRkc4q8LZs
+            EzoV2wQ+dL3/7LAeRgylDHDWvacGx8m6W3gnvErIK3eI+TFH7X3M00TulrvWY1Wb
+            773rRHnVavnGcU9JGGm7dMPaIVBUd24mHMvb7tv3M2kc3dih+EZjNSCdBMtv6u1T
+            JarbcgX5YJRIYmN8jTYBmc78G2WHW1EKctD0PQIDAQABAoIBAF52QF3EtrkA/05P
+            xwuueij20dZwmH/8O/dRcpncP7jftjFZLOadbVHNUFVFHx7gzH2zC9dHyhj73GXF
+            uu/yRHHFPUK5KZgtfpNH9C+c1s5WHTB3dpSBGjIYxferPgxtyp1vKcBVDhInVN+s
+            ES95NjOI5plc767JR37j9V6eL5ebUq8IiFUzawWUUDPQmadrkJQl5p2roXUSWdD5
+            S6MRKXnGb+nyuz4/vZ6lm19KtgXYaT9Q2H6hJUHOi9dQ5z8wsK+x9kzGTVaSZoab
+            +48wHhANTP71L+q4Nc4ByFn9yB36d6Oxb/Wq4UUc+e41ro/Knqry0JVZhKmjYhO7
+            hPyC9x0CgYEA8OZf0R9zMYh3kjCRPW3DKv3uSSD8TB887fLIW5nOfDVicpXuCP/P
+            6hvTg3AXuLUzSTJcVyONENvgAyfCZQpQflwwXCw4MCgdMwAY+nW1gWOBjO8K8F4O
+            Zwaz1d5s/J6InSyhzoKy75GQe+PqCjKLTgSUsN7foHPA4TR3VXOqBC8CgYEAz2VO
+            QfA0Ka3e+/v8rkmWN9d+J/t7Ikmc1AWB4K+5VpphzcoBYjPmD3oTYPhGoSwHBX2H
+            RsFAFTWrnox9Pbbkc4YXSHRWrEx4yxbGVwFbYKLX1ALNgWiBhSYdJk5hSrXUgSJw
+            g/U07P+mHzD7+SxjjaFalRfKsbtqSVVlPOCMt1MCgYAc/ayET0Oer2ysZDnmaaI2
+            N08I7/ZM9ulvPWuNUoo9+nK5lX+LB7Yu12ByDfhc2zmr0mq4defRIpTn7E4BuOcM
+            /e03+n5clUdGTvmykp3gT2hU3KO1X6xeC7lywIzfLfkE6U0jvCjqmdsIfdo5lfGb
+            1wNJ8dh5x9RrhdPircPFMwKBgEbvAEAfNsgWltCalAbMVluNEbH9GlVU1hXSOGSv
+            1XUgYlkvQR/kXkhm2V/uKsIPO+uNzonNqOxYKfWVWXSVLDey4h2+5LITibD0fivd
+            4/H+YFE8ECu1oa73pTqnzjDuVdtA+zi20j5JBflfGJ9VpksXp9Kci5AUaLriQTj8
+            GETPAoGAfxJpCxn3kEdoNGtDoWoFMeTusHjZ5QTxhUHjA8/14nwxRwzFc2u3KvVd
+            GPpvyoGs/NmdsZHBY+Z93qfhSuDPjDlF8hVIDhw0mOtWRqY0K1l3DzKv9+LyLhyh
+            1eYyI8hBxfosS/5xA0skt1KYQ21i8V7ibuGTaCcZiL2WGf9mwbA=
+            -----END RSA PRIVATE KEY-----
           script: |
             cd /root/nodejs
             git pull origin main
