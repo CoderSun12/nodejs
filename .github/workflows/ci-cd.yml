@@ -71,7 +71,9 @@ jobs:
             1eYyI8hBxfosS/5xA0skt1KYQ21i8V7ibuGTaCcZiL2WGf9mwbA=
             -----END RSA PRIVATE KEY-----
           script: |
-            cd /root/nodejs
-            git pull origin main
+            cd /root
+            rm -rf nodejs
+            git clone https://github.com/CoderSun12/nodejs.git
+            cd nodejs/
             docker-compose down
             docker-compose up -d
