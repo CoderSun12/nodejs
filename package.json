@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "app.js",
   "type": "module",
+  "start": "node app.js",
   "dependencies": {
     "accepts": "^2.0.0",
     "aws-ssl-profiles": "^1.1.2",
@@ -112,5 +113,8 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "jest": "^30.0.0"
+  }
 }
