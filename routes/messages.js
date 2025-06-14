@@ -7,5 +7,6 @@ const MessageRouter = express.Router();
 
 MessageRouter.post("/messageInfo", messageController.getMessageInfo);
 MessageRouter.get("/messageCreate", messageController.postMessageCreate);
+MessageRouter.post("/hello", messageController.hello);
 
 export default MessageRouter;

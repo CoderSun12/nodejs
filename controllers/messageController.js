@@ -13,6 +13,9 @@ const messageController = {
   postMessageCreate: async (req, res) => {
     res.send("postMessageCreate");
   },
+  hello: async (req, res) => {
+    res.send("hello");
+  },
 };
 
 export default messageController;
